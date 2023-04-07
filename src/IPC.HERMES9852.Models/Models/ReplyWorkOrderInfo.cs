@@ -1,19 +1,20 @@
-﻿
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
 namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "ReplyWorkOrderInfo")]
+    [XmlRoot(ElementName = "ReplyWorkOrderInfo")]
     public class ReplyWorkOrderInfo
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "WorkOrderId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "WorkOrderId")]
         public string WorkOrderId { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BatchId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BatchId")]
         public string BatchId { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Status")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Status")]
         public int Status { get; set; }
     }
 }

@@ -1,27 +1,28 @@
-﻿
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
 namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "ServiceDescription")]
+    [XmlRoot(ElementName = "ServiceDescription")]
     public class ServiceDescription
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "MachineId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "MachineId")]
         public string MachineId { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "LaneId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "LaneId")]
         public int LaneId { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "InterfaceId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "InterfaceId")]
         public string InterfaceId { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Version")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Version")]
         public string Version { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "SupportedFeatures")]
+        [DataMember]
+        [XmlElement(ElementName = "SupportedFeatures")]
         public SupportedFeatures SupportedFeatures { get; set; }
     }
 }

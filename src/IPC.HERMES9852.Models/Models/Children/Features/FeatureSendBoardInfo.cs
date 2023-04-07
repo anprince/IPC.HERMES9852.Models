@@ -1,6 +1,8 @@
-﻿namespace IPC.HERMES9852.Models
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "FeatureSendBoardInfo")]
+    [XmlRoot(ElementName = "FeatureSendBoardInfo")]
     public class FeatureSendBoardInfo
     {
     }

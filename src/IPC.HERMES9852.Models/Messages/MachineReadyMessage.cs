@@ -1,14 +1,16 @@
-﻿namespace IPC.HERMES9852.Models
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "Hermes")]
+    [XmlRoot(ElementName = "Hermes")]
     public class MachineReadyMessage
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Timestamp")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Timestamp")]
         public string Timestamp { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "MachineReady")]
+        [DataMember]
+        [XmlElement(ElementName = "MachineReady")]
         public MachineReady MachineReady { get; set; }
     }
 }

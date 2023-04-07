@@ -1,49 +1,50 @@
-﻿
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
 namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "BoardDeparted")]
+    [XmlRoot(ElementName = "BoardDeparted")]
     public class BoardDeparted
     {
         /// <summary>
         /// ID / name of this machine for identifying it in a Hermes enabled production line.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "MachineId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "MachineId")]
         public string MachineId { get; set; }
 
         /// <summary>
         /// The lane on the downstream side. Lanes are enumerated looking downstream from
         /// right to left beginning with 1
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "DownstreamLaneId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "DownstreamLaneId")]
         public int DownstreamLaneId { get; set; }
 
         /// <summary>
         /// The ID of the transportation interface on the downstream side.    
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "DownstreamInterfaceId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "DownstreamInterfaceId")]
         public string DownstreamInterfaceId { get; set; }
 
         /// <summary>
         /// Barcode of a magazine, required to identify the magazine to which the Board was transferred.    
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "MagazineId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "MagazineId")]
         public string MagazineId { get; set; }
 
         /// <summary>
         /// Indicates the slot in the magazine, enumerated from bottom to top, beginning with 1.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public int? SlotId { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLSlotIdSpecified { get { return SlotId.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "SlotId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "SlotId")]
         public int XMLSlotId
         {
             get { return (SlotId.HasValue) ? SlotId.Value : 0; }
@@ -56,15 +57,15 @@ namespace IPC.HERMES9852.Models
         /// 2 Unloaded: Board was unloaded into a magazine.
         /// 3 Removed: Board was manually taken out of the machine.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BoardTransfer")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BoardTransfer")]
         public int BoardTransfer { get; set; }
 
         /// <summary>
         /// Indicating the ID of the available board.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BoardId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BoardId")]
         public string BoardId { get; set; }
 
         /// <summary>
@@ -72,8 +73,8 @@ namespace IPC.HERMES9852.Models
         /// consecutive row of machines implementing this protocol). The MachineId is
         /// part of the Hermes configuration.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BoardIdCreatedBy")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BoardIdCreatedBy")]
         public string BoardIdCreatedBy { get; set; }
 
         /// <summary>
@@ -81,15 +82,15 @@ namespace IPC.HERMES9852.Models
         /// 1 Good board available
         /// 2 Failed board available
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "FailedBoard")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "FailedBoard")]
         public int FailedBoard { get; set; }
 
         /// <summary>
         /// Identifies a collection of PCBs sharing common properties.   
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "ProductTypeId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "ProductTypeId")]
         public string ProductTypeId { get; set; }
 
         /// <summary>
@@ -97,35 +98,35 @@ namespace IPC.HERMES9852.Models
         /// 1 Board top side is up
         /// 2 Board bottom side is up
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "FlippedBoard")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "FlippedBoard")]
         public int FlippedBoard { get; set; }
 
         /// <summary>
         /// The barcode of the top side of the PCB.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "TopBarcode")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "TopBarcode")]
         public string TopBarcode { get; set; }
 
         /// <summary>
         /// The barcode of the bottom side of the PCB.    
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BottomBarcode")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BottomBarcode")]
         public string BottomBarcode { get; set; }
 
         /// <summary>
         /// The length of the PCB in millimeter.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? Length { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLLengthSpecified { get { return Length.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Length")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Length")]
         public float XMLLength
         {
             get { return (Length.HasValue) ? Length.Value : 0; }
@@ -135,14 +136,14 @@ namespace IPC.HERMES9852.Models
         /// <summary>
         /// The width of the PCB in millimeter.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? Width { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLWidthSpecified { get { return Width.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Width")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Width")]
         public float XMLWidth
         {
             get { return (Width.HasValue) ? Width.Value : 0; }
@@ -152,14 +153,14 @@ namespace IPC.HERMES9852.Models
         /// <summary>
         /// The thickness of the PCB in millimeter.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? Thickness { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLThicknessSpecified { get { return Thickness.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Thickness")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Thickness")]
         public float XMLThickness
         {
             get { return (Thickness.HasValue) ? Thickness.Value : 0; }
@@ -169,14 +170,14 @@ namespace IPC.HERMES9852.Models
         /// <summary>
         /// The conveyor speed preferred by the upstream machine in millimeter per second.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? ConveyorSpeed { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLConveyorSpeedSpecified { get { return ConveyorSpeed.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "ConveyorSpeed")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "ConveyorSpeed")]
         public float XMLConveyorSpeed
         {
             get { return (ConveyorSpeed.HasValue) ? ConveyorSpeed.Value : 0; }
@@ -186,14 +187,14 @@ namespace IPC.HERMES9852.Models
         /// <summary>
         /// The clearance height for the top side of the PCB in millimeter.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? TopClearanceHeight { get; set; }
 
         [System.Xml.Serialization.XmlIgnore]
         public bool XMLTopClearanceHeightSpecified { get { return TopClearanceHeight.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "TopClearanceHeight")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "TopClearanceHeight")]
         public float XMLTopClearanceHeight
         {
             get { return (TopClearanceHeight.HasValue) ? TopClearanceHeight.Value : 0; }
@@ -203,14 +204,14 @@ namespace IPC.HERMES9852.Models
         /// <summary>
         /// The clearance height for the bottom side of the PCB in millimeter
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? BottomClearanceHeight { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLBottomClearanceHeightSpecified { get { return BottomClearanceHeight.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BottomClearanceHeight")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BottomClearanceHeight")]
         public float XMLBottomClearanceHeight
         {
             get { return (BottomClearanceHeight.HasValue) ? BottomClearanceHeight.Value : 0; }
@@ -220,14 +221,14 @@ namespace IPC.HERMES9852.Models
         /// <summary>
         /// The weight of the PCB in grams
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? Weight { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLWeightSpecified { get { return Weight.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Weight")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Weight")]
         public float XMLWeight
         {
             get { return (Weight.HasValue) ? Weight.Value : 0; }
@@ -237,15 +238,15 @@ namespace IPC.HERMES9852.Models
         /// <summary>
         /// Identifies the work order for production of the PCB.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "WorkOrderId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "WorkOrderId")]
         public string WorkOrderId { get; set; }
 
         /// <summary>
         /// Identifies the Batch for production of the PCB within a splitted work order
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BatchId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BatchId")]
         public string BatchId { get; set; }
 
         /// <summary>
@@ -257,14 +258,14 @@ namespace IPC.HERMES9852.Models
         /// 999 Manual removal of the board
         /// ≥1000 For individual definition within a production line
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public int? Route { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLRouteSpecified { get { return Route.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Route")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Route")]
         public int XMLRoute
         {
             get { return (Route.HasValue) ? Route.Value : 0; }
@@ -279,14 +280,14 @@ namespace IPC.HERMES9852.Models
         /// (≤ 999 Reserved for future definition)
         /// ≥1000 For individual definition within a production line
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public int? Action { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLActionSpecified { get { return Action.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Action")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Action")]
         public int XMLAction
         {
             get { return (Action.HasValue) ? Action.Value : 0; }
@@ -298,9 +299,9 @@ namespace IPC.HERMES9852.Models
         /// Note: Due to limited retain memory in PLCs this attribute might
         /// only be supported for a limited number of subboards
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlArray("SubBoards")]
-        [System.Xml.Serialization.XmlArrayItem("SubBoard")]
+        [DataMember]
+        [XmlArray("SubBoards")]
+        [XmlArrayItem("SubBoard")]
         public SubBoard[] SubBoards { get; set; }
     }
 }

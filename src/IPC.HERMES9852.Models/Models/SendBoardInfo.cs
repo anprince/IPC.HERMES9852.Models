@@ -1,22 +1,24 @@
-﻿namespace IPC.HERMES9852.Models
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "SendBoardInfo")]
+    [XmlRoot(ElementName = "SendBoardInfo")]
     public class SendBoardInfo
     {
         /// <summary>
         /// The ID of the board which data has been requested.This attribute will
         /// not be sent if the board information has not been found.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BoardId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BoardId")]
         public string BoardId { get; set; }
 
         /// <summary>
         /// MachineId of the machine which created the BoardId.This attribute will
         /// not be sent if the board information has not been found. 
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BoardIdCreatedBy")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BoardIdCreatedBy")]
         public string BoardIdCreatedBy { get; set; }
 
         /// <summary>
@@ -26,14 +28,14 @@
         /// 2 Ready to accept failed boards
         /// This attribute will not be sent if the board information has not been found.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public int? FailedBoard { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLFailedBoardSpecified { get { return FailedBoard.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "FailedBoard")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "FailedBoard")]
         public int XMLFailedBoard
         {
             get { return (FailedBoard.HasValue) ? FailedBoard.Value : 0; }
@@ -43,8 +45,8 @@
         /// <summary>
         /// Identifies a collection of PCBs sharing common properties.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "ProductTypeId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "ProductTypeId")]
         public string ProductTypeId { get; set; }
 
         /// <summary>
@@ -52,14 +54,14 @@
         /// 1 Board top side is up
         /// 2 Board bottom side is up
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public int? FlippedBoard { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLFlippedBoardSpecified { get { return FlippedBoard.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "FlippedBoard")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "FlippedBoard")]
         public int XMLFlippedBoard
         {
             get { return (FlippedBoard.HasValue) ? FlippedBoard.Value : 0; }
@@ -70,29 +72,29 @@
         /// The barcode of the top side of the next PCB.This attribute is mandatory
         /// if it has been in the QueryBoardInfo message
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "TopBarcode")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "TopBarcode")]
         public string TopBarcode { get; set; }
 
         /// <summary>
         /// The barcode of the bottom side of the next PCB.This attribute is mandatory 
         /// if it has been in the QueryBoardInfo message.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BottomBarcode")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BottomBarcode")]
         public string BottomBarcode { get; set; }
 
         /// <summary>
         /// The length of the PCB in millimeter.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? Length { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLLengthSpecified { get { return Length.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Length")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Length")]
         public float XMLLength
         {
             get { return (Length.HasValue) ? Length.Value : 0; }
@@ -102,14 +104,14 @@
         /// <summary>
         /// The width of the PCB in millimeter.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? Width { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLWidthSpecified { get { return Width.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Width")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Width")]
         public float XMLWidth
         {
             get { return (Width.HasValue) ? Width.Value : 0; }
@@ -119,14 +121,14 @@
         /// <summary>
         /// The thickness of the PCB in millimeter.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? Thickness { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLThicknessSpecified { get { return Thickness.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Thickness")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Thickness")]
         public float XMLThickness
         {
             get { return (Thickness.HasValue) ? Thickness.Value : 0; }
@@ -136,14 +138,14 @@
         /// <summary>
         /// The clearance height for the top side of the PCB in millimeter.
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? TopClearanceHeight { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLTopClearanceHeightSpecified { get { return TopClearanceHeight.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "TopClearanceHeight")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "TopClearanceHeight")]
         public float XMLTopClearanceHeight
         {
             get { return (TopClearanceHeight.HasValue) ? TopClearanceHeight.Value : 0; }
@@ -153,14 +155,14 @@
         /// <summary>
         /// The clearance height for the bottom side of the PCB in millimeter
         /// </summary>
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public float? BottomClearanceHeight { get; set; }
 
-        [System.Xml.Serialization.XmlIgnore]
+        [XmlIgnore]
         public bool XMLBottomClearanceHeightSpecified { get { return BottomClearanceHeight.HasValue; } }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BottomClearanceHeight")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BottomClearanceHeight")]
         public float XMLBottomClearanceHeight
         {
             get { return (BottomClearanceHeight.HasValue) ? BottomClearanceHeight.Value : 0; }
@@ -170,15 +172,15 @@
         /// <summary>
         /// Identifies the work order for production of the PCB.
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "WorkOrderId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "WorkOrderId")]
         public string WorkOrderId { get; set; }
 
         /// <summary>
         /// Identifies the Batch for production of the PCB within a splitted work order
         /// </summary>
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "BatchId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "BatchId")]
         public string BatchId { get; set; }
     }
 }

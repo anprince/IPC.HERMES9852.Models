@@ -1,11 +1,12 @@
-﻿
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
 namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "Command")]
+    [XmlRoot(ElementName = "Command")]
     public class ACommand
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Command")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Command")]
         public int Command { get; set; }
     }
 }

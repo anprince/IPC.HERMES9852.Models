@@ -1,14 +1,16 @@
-﻿namespace IPC.HERMES9852.Models
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "Hermes")]
+    [XmlRoot(ElementName = "Hermes")]
     public class GetConfigurationMessage
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Timestamp")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Timestamp")]
         public string Timestamp { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "GetConfiguration")]
+        [DataMember]
+        [XmlElement(ElementName = "GetConfiguration")]
         public GetConfiguration GetConfiguration { get; set; }
     }
 }

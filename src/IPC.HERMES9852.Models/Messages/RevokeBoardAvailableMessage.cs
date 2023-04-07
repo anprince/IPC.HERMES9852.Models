@@ -1,14 +1,16 @@
-﻿namespace IPC.HERMES9852.Models
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "Hermes")]
+    [XmlRoot(ElementName = "Hermes")]
     public class RevokeBoardAvailableMessage
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Timestamp")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Timestamp")]
         public string Timestamp { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "RevokeBoardAvailable")]
+        [DataMember]
+        [XmlElement(ElementName = "RevokeBoardAvailable")]
         public RevokeBoardAvailable RevokeBoardAvailable { get; set; }
     }
 }

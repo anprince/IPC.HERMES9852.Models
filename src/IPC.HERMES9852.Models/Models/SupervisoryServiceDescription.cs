@@ -1,19 +1,20 @@
-﻿
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
 namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "SupervisoryServiceDescription")]
+    [XmlRoot(ElementName = "SupervisoryServiceDescription")]
     public class SupervisoryServiceDescription
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "SystemId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "SystemId")]
         public string SystemId { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Version")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Version")]
         public string Version { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "SupportedFeatures")]
+        [DataMember]
+        [XmlElement(ElementName = "SupportedFeatures")]
         public SupvervisoryFeatures SupportedFeatures { get; set; }
     }
 }

@@ -1,102 +1,105 @@
-﻿namespace IPC.HERMES9852.Models
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+
+namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "Hermes")]
+    [XmlRoot(ElementName = "Hermes")]
     public class AllHermesMessages
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Timestamp")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Timestamp")]
         public string Timestamp { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "CheckAlive")]
+        [DataMember]
+        [XmlElement(ElementName = "CheckAlive")]
         public CheckAlive CheckAlive { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "ServiceDescription")]
+        [DataMember]
+        [XmlElement(ElementName = "ServiceDescription")]
         public ServiceDescription ServiceDescription { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "Notification")]
+        [DataMember]
+        [XmlElement(ElementName = "Notification")]
         public Notification Notification { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "BoardAvailable")]
+        [DataMember]
+        [XmlElement(ElementName = "BoardAvailable")]
         public BoardAvailable BoardAvailable { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "RevokeBoardAvailable")]
+        [DataMember]
+        [XmlElement(ElementName = "RevokeBoardAvailable")]
         public RevokeBoardAvailable RevokeBoardAvailable { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "MachineReady")]
+        [DataMember]
+        [XmlElement(ElementName = "MachineReady")]
         public MachineReady MachineReady { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "RevokeMachineReady")]
+        [DataMember]
+        [XmlElement(ElementName = "RevokeMachineReady")]
         public RevokeMachineReady RevokeMachineReady { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "StartTransport")]
+        [DataMember]
+        [XmlElement(ElementName = "StartTransport")]
         public StartTransport StartTransport { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "StopTransport")]
+        [DataMember]
+        [XmlElement(ElementName = "StopTransport")]
         public StopTransport StopTransport { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "TransportFinished")]
+        [DataMember]
+        [XmlElement(ElementName = "TransportFinished")]
         public TransportFinished TransportFinished { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "BoardForecast")]
+        [DataMember]
+        [XmlElement(ElementName = "BoardForecast")]
         public BoardForecast BoardForecast { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "QueryBoardInfo")]
+        [DataMember]
+        [XmlElement(ElementName = "QueryBoardInfo")]
         public QueryBoardInfo QueryBoardInfo { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "SendBoardInfo")]
+        [DataMember]
+        [XmlElement(ElementName = "SendBoardInfo")]
         public SendBoardInfo SendBoardInfo { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "SetConfiguration")]
+        [DataMember]
+        [XmlElement(ElementName = "SetConfiguration")]
         public SetConfiguration SetConfiguration { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "GetConfiguration")]
+        [DataMember]
+        [XmlElement(ElementName = "GetConfiguration")]
         public GetConfiguration GetConfiguration { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "CurrentConfiguration")]
+        [DataMember]
+        [XmlElement(ElementName = "CurrentConfiguration")]
         public CurrentConfiguration CurrentConfiguration { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "SupervisoryServiceDescription")]
+        [DataMember]
+        [XmlElement(ElementName = "SupervisoryServiceDescription")]
         public SupervisoryServiceDescription SupervisoryServiceDescription { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "BoardArrived")]
+        [DataMember]
+        [XmlElement(ElementName = "BoardArrived")]
         public BoardArrived BoardArrived { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "BoardDeparted")]
+        [DataMember]
+        [XmlElement(ElementName = "BoardDeparted")]
         public BoardDeparted BoardDeparted { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "QueryWorkOrderInfo")]
+        [DataMember]
+        [XmlElement(ElementName = "QueryWorkOrderInfo")]
         public QueryWorkOrderInfo QueryWorkOrderInfo { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "SendWorkOrderInfo")]
+        [DataMember]
+        [XmlElement(ElementName = "SendWorkOrderInfo")]
         public SendWorkOrderInfo SendWorkOrderInfo { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "ReplyWorkOrderInfo")]
+        [DataMember]
+        [XmlElement(ElementName = "ReplyWorkOrderInfo")]
         public ReplyWorkOrderInfo ReplyWorkOrderInfo { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "Command")]
+        [DataMember]
+        [XmlElement(ElementName = "Command")]
         public ACommand Command { get; set; }
     }
 }

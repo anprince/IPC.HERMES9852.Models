@@ -1,14 +1,16 @@
-﻿namespace IPC.HERMES9852.Models
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
+namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "Hermes")]
+    [XmlRoot(ElementName = "Hermes")]
     public class BoardArrivedMessage
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Timestamp")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Timestamp")]
         public string Timestamp { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlElement(ElementName = "BoardArrived")]
+        [DataMember]
+        [XmlElement(ElementName = "BoardArrived")]
         public BoardArrived BoardArrived { get; set; }
     }
 }

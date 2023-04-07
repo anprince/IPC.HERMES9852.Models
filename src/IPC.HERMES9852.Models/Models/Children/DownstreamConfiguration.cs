@@ -1,23 +1,24 @@
-﻿
+﻿using System.Runtime.Serialization;
+using System.Xml.Serialization;
 namespace IPC.HERMES9852.Models
 {
-    [System.Xml.Serialization.XmlRoot(ElementName = "DownstreamConfiguration")]
+    [XmlRoot(ElementName = "DownstreamConfiguration")]
     public class DownstreamConfiguration
     {
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "DownstreamLaneId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "DownstreamLaneId")]
         public int DownstreamLaneId { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "DownstreamInterfaceId")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "DownstreamInterfaceId")]
         public string DownstreamInterfaceId { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "ClientAddress")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "ClientAddress")]
         public string ClientAddress { get; set; }
 
-        [System.Runtime.Serialization.DataMember]
-        [System.Xml.Serialization.XmlAttribute(AttributeName = "Port")]
+        [DataMember]
+        [XmlAttribute(AttributeName = "Port")]
         public int Port { get; set; }
     }
 }
